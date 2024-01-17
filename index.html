@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Interactive Image Gallery</title>
     <style>
@@ -37,7 +36,7 @@
     <script src="https://unpkg.com/interactjs@1.10.11/dist/interact.min.js"></script>
 </head>
 <body>
-    <h1 align="center">Image Gallery</h1>
+    <h1 align="center">Image Gallery v1</h1>
     <div id="container">
         <img decoding="async" src="https://jwebdesignerph.com/studipal/wp-content/uploads/2024/01/1111.png" class="draggable" id="image1" draggable="true">
         <img decoding="async" src="https://jwebdesignerph.com/studipal/wp-content/uploads/2024/01/2222.jpg" class="draggable" id="image2" draggable="true">
@@ -66,6 +65,7 @@
                             restriction: 'parent'
                         })
                     ],
+                    inertia: true, // Enable inertia for smooth touch dragging
                     onmove: function (event) {
                         const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
                         const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
